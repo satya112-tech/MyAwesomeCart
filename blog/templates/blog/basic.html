@@ -11,7 +11,18 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
 
     <title>{%block title%} {%endblock%}</title>
-    <style>{%block css%} {%endblock%}</style>
+    <style>
+        {
+            %block css%
+        }
+
+            {
+            %endblock%
+        }
+    </style>
+    <!-- Meta Plugin -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0"
+        nonce="UdjSUg4F"></script>
 </head>
 
 <body>
@@ -41,14 +52,14 @@
                     <a class="nav-link" href="/shop/contact">Contact Us</a>
                 </li>
             </ul>
-            <form method='get' action='/shop/search/' class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
                     Search
                 </button>
             </form>
-            <button type="button" id="popcart" class="btn btn-secondary mx-2" data-toggle="popover"
-                data-placement="bottom" data-html="true" data-title="">
+            <button type="button" id="popcart" class="btn btn-secondary mx-2" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" data-html="true" data-bs-title="Tooltip on bottom">
                 Cart(<span id="cart">0</span>)
             </button>
         </div>
